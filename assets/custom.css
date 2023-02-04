@@ -1,0 +1,923 @@
+/*************カスタム箇所の記述**************/
+
+
+/*pタグカスタマイズ*/
+p{
+    letter-spacing:1px;
+   
+}
+
+
+/*************トップページPRODUCT***********
+#shopify-section-template--15731862208736__featured-collections .ProductList{
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 640px) {
+    #shopify-section-template--15709324181728__featured-collections .ProductList{
+        flex-wrap:wrap;
+        justify-content: flex-start;
+    }
+}
+
+.Heading{
+    text-transform: none !important;
+}
+*/
+
+/************トップページCONCEPT*************/
+.SectionHeader__Description p{
+    font-size:inherit;
+    text-align:left;
+    line-height: 2rem;
+
+
+}
+
+/*スライダーボタンカスタマイズ*/
+@media screen and (min-width: 500px){
+    .Timeline__Nav {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+    .SectionHeader__Description p{
+        text-align:center;
+    
+    }
+    }
+@media screen and (min-width: 641px){
+    .Timeline__Nav {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+    .SectionHeader__Description p{
+        text-align:left;
+    
+    }
+    
+    }
+@media screen and (min-width: 1140px){
+.Timeline__Nav {
+    margin-top: 0;
+    margin-bottom: 65px;
+}
+.SectionHeader__Description p{
+    text-align:left;
+
+}
+
+}
+/*backgroundの色明るく*/
+.Timeline__ListItem .Image--contrast::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: none;
+  }
+
+/*スマホ表示時に背景白・テキスト黒・シャドウ削除*/
+.Timeline__Header.SectionHeader.SectionHeader--center {
+    background-color: #fff;
+    /*opacity:0.8;*/
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+@media screen and (max-width: 640px){
+.Timeline__Header .Heading, .Timeline__Header .Rte a {
+    color: initial;
+}
+.Timeline__Inner .SectionHeader__Description.Rte p{
+    text-shadow: none;
+    color: initial;
+
+}
+}
+
+/************** PROJECT************/
+.imagehero_custom_title h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#shopify-section-template--15748784750816__1647491383b016a3dd .project_head {
+    text-shadow: 0px 1px 2px rgb(0 0 0 / 40%);
+    font-weight: bold;
+}
+
+
+
+/* **************  INGREDIENT DICTIONARY  ***************  */
+/*                 INGREDIENT DICTIONARY                   */
+/*                 INGREDIENT DICTIONARY                    */
+/*  *************  INGREDIENT DICTIONARY  ***************   */
+
+
+
+#section-template--15783485571296__1646707459ddec4490{
+    padding: 40px 0;
+}
+#shopify-section-template--15783485571296__main .PageContent{
+    margin:0!important;
+}
+/*タイトルの行間調整*/
+#shopify-section-template--15783485571296__main .SectionHeader__Heading{
+    line-height: 1.4;
+}
+/*タイトル日本語*/
+.dic_title_small {
+    font-size: 14px;
+}
+
+/*dict*/
+.s_03{
+    margin-bottom:5px;
+}
+
+.dict_wrap{
+    width:100%;
+    margin-top:60px;
+    margin-bottom:60px;
+}
+.dict_wrap p{
+    color:#777777;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    margin: 10px 0;
+}
+.dict_inner{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.dict_title h1{
+    background-color: #231815;
+    color: #fff;
+    padding-left: 3rem;
+    font-size: 16px!important;
+}
+.dict_contents_wrap{
+    width:95%;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+.dict_contents{
+    width:22%;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.dict_contents:not(:nth-child(4n+4)) {
+    margin-right: 4%;
+  }
+ /* 
+  .dict_contents:nth-child(n+5) {
+    margin-top: 30px;
+  }*/
+
+@media screen and (max-width:800px ) {
+    .dict_inner{
+        width:80%;
+    }
+    .dict_contents{
+        width:32%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .dict_contents:not(:nth-child(4n+4)) {
+        margin-right: 0;
+      }
+    .dict_contents:not(:nth-child(3n+3)) {
+        margin-right: 2%;
+      }
+      .dict_contents:nth-child(n+5) {
+        margin-top: 0;
+      }
+      
+      .dict_contents:nth-child(n+4) {
+        margin-top: 20px;
+      }
+
+}
+@media screen and (max-width:600px ) {
+    .dict_contents_wrap{
+        justify-content:space-between;
+    }
+    .dict_contents{
+        width:45%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .dict_contents:not(:nth-child(4n+4)) {
+        margin-right: 0;
+      }
+    .dict_contents:not(:nth-child(3n+3)) {
+        margin-right: 0;
+      }
+
+      .dict_contents:nth-child(n+5) {
+        margin-top: 0;
+      }
+      
+      .dict_contents:nth-child(n+4) {
+        margin-top: 20px;
+      }
+
+}
+.dict_cont_a{
+    cursor:pointer;
+   
+
+}
+.dict_cont:hover{
+    opacity: 0.8;
+    
+}
+.dict_cont a{
+    color:#231815;
+}
+.dict_cont .dict_img{
+    width:100%;
+    
+}
+.dict_cont .dict_img img{
+    width:70%;
+    height:auto; 
+    margin:0 auto;
+}
+
+/************モーダル************/
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 10;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.5);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+/*モーダル中身*/
+.modal__content{
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    padding: 40px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+
+.modal-content_inner{
+    border-bottom:1px solid #666;
+}
+.modal-content_title{
+    width:60%;
+    margin:1rem auto;
+}
+.modal-content_title h3{
+    margin:0!important;
+}
+.modal-content_title p{
+    margin:0!important;
+}
+
+.dict_img{
+    width: 40%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.dict_img img{
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.modal-content_bottom{
+    width:100%;
+}
+.modal-bottom_inner{
+    width:90%;
+    margin:1rem auto;
+
+}
+.modal-bottom_inner_p{
+    margin:1rem 0;
+}
+.dict_detail p{
+    margin: 0!important;
+}
+
+
+.js-modal-close {
+    text-align: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/*モーダル枠の指定*/
+.modal-body{
+	position: absolute;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 500px;
+	max-height: 95vh;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    overflow: scroll;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+}
+
+/*モーダル内のコンテンツの指定*/
+.modal-content{
+	background: #fff;
+	text-align: left;
+	padding: 10px 30px;
+
+}
+
+/* モーダルウィンドウ表示中に記事本体を固定 */
+body.fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+
+/********************************/
+
+@media screen and (max-width:800px ) {
+    .modal-content_title {
+        width: 80%;
+        margin: 1rem auto;
+        
+    }
+    .modal-body {
+        max-height: 80vh;
+        width: 90%;
+    }
+    .modal-content {
+        background: #fff;
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .modal-bottom_inner {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+}
+
+
+
+/*====================================================================
+.s_03 .accordion_one
+====================================================================*/
+.s_03 .accordion_one {
+    width: 70%;
+    margin: 0 auto;
+}
+    .s_03 .accordion_one .accordion_header {
+        position: relative;
+        padding-left: 10%;
+        z-index: +1;
+        cursor: pointer;
+        transition-duration: 0.2s;
+        padding:0;
+        border-bottom: 1px solid #fff;
+        border: none;
+        background-color: #080808;
+    }
+    .s_03 .accordion_one:nth-of-type(2) .accordion_header {
+        background-color: #080808;
+    }
+    .s_03 .accordion_one:nth-of-type(3) .accordion_header {
+        background-color: #080808;
+    }
+    .s_03 .accordion_one .accordion_header:hover {
+    opacity: .8;
+    }
+    .s_03 .accordion_one .accordion_header .i_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        box-sizing: border-box;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transform-origin: center center;
+        transition-duration: 0.2s;
+    }
+    .s_03 .accordion_one .accordion_header.stay .i_box {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    .s_03 .accordion_one .accordion_header .i_box .one_i {
+    display: block;
+    width: 18px;
+    height: 18px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform-origin: center center;
+    transition-duration: 0.2s;
+    position: relative;
+    }
+    .s_03 .accordion_one .accordion_header.stay .i_box .one_i {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    .s_03 .accordion_one .accordion_header.stay.open .i_box .one_i {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    .s_03 .accordion_one .accordion_header.open .i_box {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    }
+    .s_03 .accordion_one .accordion_header.stay.open .i_box {
+    -webkit-transform: rotate(315eg);
+    transform: rotate(315deg);
+    }
+    .s_03 .accordion_one .accordion_header .i_box .one_i:before, .s_03 .accordion_one .accordion_header .i_box .one_i:after {
+        display: flex;
+        content: '';
+        background-color: #fff;
+        border-radius: 10px;
+        width: 12px;
+        height: 1px;
+        position: absolute;
+        top: 8px;
+        left: 3.5px;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        transform-origin: center center;
+    }
+    .s_03 .accordion_one .accordion_header .i_box .one_i:before {
+        width: 1px;
+    height: 12px;
+    top: 2.7px;
+    left: 8.9px;
+    }
+    
+    .s_03 .accordion_one .accordion_header.stay .i_box .one_i:before {
+    content: none;
+    }
+    .s_03 .accordion_one .accordion_header.open .i_box .one_i:before {
+    content: none;
+    }
+    .s_03 .accordion_one .accordion_header.stay.open .i_box .one_i:before {
+    content: "";
+    }
+    .s_03 .accordion_one .accordion_header.open .i_box .one_i:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+    .s_03 .accordion_one .accordion_header.stay.open .i_box .one_i:after {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    .s_03 .accordion_one .accordion_inner {
+        display: none;
+        padding: 30px 0;
+        box-sizing: border-box;
+    }
+    .s_03 .accordion_one .accordion_inner.stay {
+    display: block;
+    }
+    @media screen and (max-width: 1024px) {
+    .s_03 .accordion_one .accordion_header {
+    font-size: 18px;
+    }
+    .s_03 .accordion_one .accordion_header .i_box {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    }
+    }
+    @media screen and (max-width: 767px) {
+        .s_03 .accordion_one .accordion_header {
+        font-size: 16px;
+        text-align: left;
+        
+        }
+        .s_03 .accordion_one {
+            width: 80%;
+            margin: 0 auto;
+        }
+        }
+        @media screen and (max-width: 600px) 
+        {
+            .s_03 .accordion_one {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+/*********************************************************/
+
+
+/**************FAQページ*************/
+.Faq__Section {
+    background-color: #231815;
+    color: #fff;
+    padding-left: 1rem;
+    font-size: 16px!important;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    letter-spacing: 0.2em !important;
+}
+.FaqSummary__Item {
+    font-size: 16px;
+}
+
+
+
+
+
+/******************商品詳細ページ****************/
+#product_form_7561800712416 > div:nth-child(5){
+    margin:8px 0;
+}
+
+/**商品ページタイトルモバイル表示を変更
+.ProductMeta {
+    text-align: center→left;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+**/
+
+
+/*howtouse*/
+.howto_wrap{
+    padding-top:60px;
+    padding-bottom:60px;
+    width:100%;
+  }
+.howto_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    text-align: center;
+
+  }
+.howto_con{
+    width:100%;
+    display:flex;
+    justify-content: center;
+
+}
+.howto_content{
+    width:30%;
+    margin:0 40px ;
+    text-align: center;
+}
+.howto_content_img{
+    width:100%;
+    margin-bottom:20px;
+    
+
+}
+.howto_content_img img{
+    width:100%;
+    
+}
+
+/***********footerカスタマイズ****************/
+.Footer__Inner .Linklist{
+    letter-spacing: 1px;
+}
+
+a.Footer__StoreName.Heading.u-h7.Link.Link--secondary {
+    text-transform: none;
+    letter-spacing: 1px;
+}
+.footer_social_icon{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.footer_social_icon .Icon {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    fill: currentColor;
+    vertical-align: middle;
+    stroke-width: 1px;
+    background: none;
+    pointer-events: none;
+  }
+.Footer__Inner .Link--primary {
+    font-size: 13px;
+}
+
+/*メルマガフォントの変更*/
+.Footer__Block--newsletter .Footer__Title {
+    margin-bottom:10px;
+
+}
+.Footer__Block--newsletter .Footer__Content p{
+    font-size:12px !important;
+}
+.Footer__Newsletter .Form__Input{
+    font-size:12px !important;
+
+}
+
+
+/*wishhero*/
+
+.Product__InfoWrapper #wishlisthero-product-page-button-container {
+    background-color: #231815;
+}
+
+.Product__InfoWrapper #wishlisthero-product-page-button-container .Button{
+    background-color: rgb(255 255 255);
+    margin: 0px;
+    opacity: 1!important;
+    color: rgb(0 0 0);
+    border: solid 1px #231815!important;
+    line-height: normal;
+    height: 40px;
+    display: block;
+    padding: 0px 20px;
+    text-align: center;
+    overflow: hidden;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+
+}
+.Product__InfoWrapper #wishlisthero-product-page-button-container .Button:hover{
+    color: rgb(255, 255, 255)!important;
+
+}
+.Product__InfoWrapper #wishlisthero-product-page-button-container .Button:hover svg.svg-inline--fa.fa-heart.fa-w-16.fa-1x{
+    color: rgb(255, 255, 255)!important;
+
+}
+.Product__InfoWrapper #wishlisthero-product-page-button-container  svg.svg-inline--fa.fa-heart.fa-w-16.fa-1x {
+    color: #231815;
+}
+
+.MuiButton-containedPrimary{
+    color:#000000 !important;
+
+}
+@media screen and (max-width:640px ) {
+.Product__InfoWrapper #wishlisthero-product-page-button-container .Button:hover{
+    color: rgb(0, 0, 0)!important;
+
+}
+.Product__InfoWrapper #wishlisthero-product-page-button-container .Button:hover svg.svg-inline--fa.fa-heart.fa-w-16.fa-1x{
+    color: rgb(0, 0, 0)!important;
+
+}}
+
+/*ヘッダーお気に入りアイコンの太さ調整*/
+.Header__Icon .wlh-Icon:before{
+    text-shadow: 0px 0.6px 0 #231815!important;
+
+}
+@media screen and (max-width:640px ) {
+    .wlh-Icon{
+        font-size: 16px !important;
+    }
+    .Header__Icon .wlh-Icon:before{
+        text-shadow: 0px 0px 0 #231815!important;
+    
+    }
+}
+
+@media screen and (max-width:800px ) {
+.Footer__Block.Footer__Block--text {
+    margin-bottom: 48px;
+}
+
+}
+
+
+/****************カスタムボタン****************/
+.button__custom{
+    background-color:#231815 !important;
+    border:1px solid #231815!important;
+    color:#231815!important;
+    padding: 10px 28px !important;
+    position: relative;
+    width: 50%;
+    max-width:250px;
+
+}
+.button__custom::before{
+    background-color: #fff;
+    
+
+}
+.button__custom::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.4em;
+    right: 8%;
+    content: '';
+    width: 30px;
+    height: 5px;
+    border-bottom: solid 1px;
+    border-right: solid 2px;
+    transform: skew(60deg);
+  }
+
+@media (-moz-touch-enabled: 0), (hover: hover) {
+    .features--show-button-transition .button__custom:not([disabled]):hover/*,
+    .features--show-button-transition .shopify-payment-button__button--unbranded:not([disabled]):hover,
+    .features--show-button-transition .spr-summary-actions-newreview:not([disabled]):hover,
+    .features--show-button-transition .spr-button-primary:not(input):not([disabled]):hover */{
+      color: #fff!important;
+      background-color: #231815!important;
+      border:1px solid #231815!important;
+    }
+  }
+
+
+
+
+/*特定商取引に関するページ*/
+
+
+#table01{
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse:  collapse;
+   font-size:14px;
+    white-space: normal;
+    
+}
+
+#table01 th{
+    width:20%;
+    text-align:left;
+    padding:10px 0;
+    border-right:none;
+    font-weight:bold;
+    
+}
+#table01 td{
+    width:70%;
+    padding:10px 0 5px;
+}
+ .text-dec{
+    line-height:2;
+    font-weight:bold;
+ }
+            
+@media screen and (max-width:800px ) {
+
+    #table01{
+        width: 80% !important;
+        margin-left:auto;
+        margin-right:auto;
+        border-collapse:  collapse;
+        font-size:14px;
+        white-space: normal;
+    }
+            
+            
+            
+  #table01 th {
+    width: 100% !important;
+    max-width: 500px;
+    display: block;
+    border-bottom: none;
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+    padding-left: 10% !important;
+    
+}
+  #table01 td {
+    width: 100%;
+    display: block;
+    padding-left: 10% !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+            
+}            
+
+/*****カートの配送日時指定*****/
+.cart_custom_wrap #date {
+    border: solid 1px #666;
+    border-radius: 2px;
+}
+
+/*************商品ページ*************/
+/*カート下アコーディオンタブ*/
+.Product__Info .s_03 .accordion_one {
+    width: 100%;
+    margin: 20px auto;
+}
+.Product__Info .s_03 .accordion_one .accordion_header .i_box {
+    top: 50%;
+    left: 3rem;
+}
+.Product__Info .dict_title h1 {
+    background-color: #ffffff;
+    color: #231815;
+    padding-left: 0;
+    font-size:14px !important;
+}
+.Product__Info .i_box .one_i:before{
+  background-color: #231815 !important;
+}
+.Product__Info .i_box .one_i:after{
+    background-color: #231815 !important;
+  }
+  .Product__Info .accordion_inner{
+    padding:5px 0 !important;
+}
+@media screen and (max-width: 767px) {
+    .Product__Info .s_03 .accordion_one .accordion_header .i_box {
+        top: 50%;
+    }
+
+
+}
+/*一部小文字*/
+.k_small{
+    font-size:12px;
+}
+/*改行*/
+.sp_d{
+    display:none;
+}
+@media screen and (max-width: 600px) {
+    .sp_d{
+        display:block;
+    }
+}
+
+/*特定商取引に関する*/
+
+.shopify-policy__container #table01{
+    font-family: sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+.shopify-policy__container #table01{
+    width: 100% !important;
+}
+.shopify-policy__container #table01 th{
+    padding-left: 0 !important;
+
+}
+.shopify-policy__container #table01 td{
+    padding-left: 0 !important;
+
+}
+
+}
+
+/*ABOUTページ*/
+#shopify-section-template--15784506032352__main .PageContent{
+    margin-bottom:0 !important;
+
+}
+/*TOPICS項目*/
+.ArticleItem__Excerpt{
+    line-height: 2rem;
+}
+
+
+/*インスタカスタマイズ*/
+.sw-instagram-header-title span{
+    font-size: 20px !important;
+    font-family: var(--heading-font-family);
+    letter-spacing: .2em !important;
+}
+.sw-instagram-header-title{
+    margin-bottom:65px !important;
+
+}
+@media screen and (max-width: 800px) {
+    .sw-instagram-header-title{
+        margin-bottom:40px !important;
+    
+    }
+
+}

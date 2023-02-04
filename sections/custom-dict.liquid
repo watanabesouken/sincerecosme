@@ -1,0 +1,384 @@
+{%comment%}カスタムセクション{%endcomment%}
+<script>
+    $(function(){
+        $('.js-modal-open').each(function(){
+            $(this).on('click',function(){
+                var target = $(this).data('target');
+                var modal = document.getElementById(target);
+                $(modal).fadeIn();
+                return false;
+            });
+        });
+        $('.js-modal-close').on('click',function(){
+            $('.js-modal').fadeOut();
+            return false;
+        }); 
+    });
+    </script>
+
+
+<section class="dict_wrap">
+    <div class="dict_inner">
+        <div class="dict_title">
+            <h1>{{section.settings.dict_title}}</h1>
+        </div>
+        <div class="dict_contents_wrap">
+            {% for block in section.blocks %} 
+            
+            <div class="dict_contents">
+                <a class="js-modal-open dict_cont_a" data-target="{{block.settings.dict_material_name_en}}">
+                    <div class="dict_cont modal-open">
+                        <p>{{block.settings.dict_material_name_jp}}</p>
+                        <div class="dict_img"><img src="{{block.settings.dict_img | img_url: '500x'}}"></div>
+                        
+                    </div>
+                </a>
+                <!-- モーダル本体 -->
+                <div id="{{block.settings.dict_material_name_en}}" class="modal js-modal">
+                    <div class="modal__bg js-modal-close"></div>
+                    <div class="modal-body">
+                        <!-- 閉じるボタン -->
+                        
+                        <!-- モーダル内のコンテンツ -->
+                        <div class="modal-content">
+                            <div class="js-modal-close">×</div>
+                            <div class="modal-content_inner">
+                                <div class="dict_img"><img src="{{block.settings.dict_img | img_url: '500x'}}"></div>
+                                <div class="modal-content_title">
+                                    <p class="inci_name_jp">{{block.settings.dict_material_name_jp}}</p>
+                                    <p class="inci_name_en">{{block.settings.dict_material_name_en}}</p>
+                                </div>
+                            </div>
+                            <div class="modal-content_bottom" >
+                                <div class="modal-bottom_inner">
+                                    <div class="dict_detail">
+                                        {% if block.settings.detail_subject != blank %}
+                                        <p>科名：{{block.settings.detail_subject}}</p>
+                                        {%endif%}
+                                        {% if block.settings.dict_origin != blank %}
+                                        <p>産地：{{block.settings.dict_origin}}</p>
+                                        {%endif%}
+                                        {% if block.settings.dict_extract != blank %}
+                                        <p>抽出部位：{{block.settings.dict_extract}}</p>
+                                        {%endif%}
+                                    </div>
+                                    <p>{{block.settings.detail_text}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+  {% schema %}
+  {
+  "name":"カスタムDictionary",
+    "settings":[
+        {
+            "type":"text",
+            "id":"dict_title",
+            "label":"タイトル"
+        }
+        ],
+        "blocks":[
+        {
+          "type":"text",
+          "name":"原料紹介",
+          "settings":[
+            {
+                "type":"image_picker",
+                "id":"dict_img",
+                "label":"原料画像"
+            },
+            {
+                "type":"text",
+                "id":"dict_material_name_jp",
+                "label":"原料名（日本語）"
+            },
+            {
+                "type":"text",
+                "id":"dict_material_name_en",
+                "label":"原料名（英語）"
+            },
+            {
+                "type":"text",
+                "id":"detail_subject",
+                "label":"科目名"
+            },
+            {
+                "type":"text",
+                "id":"dict_origin",
+                "label":"産地"
+            },
+            {
+                "type":"text",
+                "id":"dict_extract",
+                "label":"抽出部位"
+            },
+            {
+                "type":"textarea",
+                "id":"detail_text",
+                "label":"詳細説明"
+            }
+            ]
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタムDictionary",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+  /*dict*/
+.dict_wrap{
+    width:100%;
+    margin-top:60px;
+    margin-bottom:60px;
+}
+.dict_wrap p{
+    color:#777777;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    margin: 10px 0;
+}
+.dict_inner{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.dict_title h1{
+    background-color: #9db3c3;
+    color: #fff;
+    padding-left: 3rem;
+    font-size: 16px!important;
+}
+.dict_contents_wrap{
+    width:95%;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+.dict_contents{
+    width:22%;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.dict_contents:not(:nth-child(4n+4)) {
+    margin-right: 4%;
+  }
+ /* 
+  .dict_contents:nth-child(n+5) {
+    margin-top: 30px;
+  }*/
+
+@media screen and (max-width:800px ) {
+    .dict_inner{
+        width:80%;
+    }
+    .dict_contents{
+        width:32%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .dict_contents:not(:nth-child(4n+4)) {
+        margin-right: 0;
+      }
+    .dict_contents:not(:nth-child(3n+3)) {
+        margin-right: 2%;
+      }
+      .dict_contents:nth-child(n+5) {
+        margin-top: 0;
+      }
+      
+      .dict_contents:nth-child(n+4) {
+        margin-top: 20px;
+      }
+
+}
+@media screen and (max-width:600px ) {
+    .dict_contents_wrap{
+        justify-content:space-between;
+    }
+    .dict_contents{
+        width:45%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .dict_contents:not(:nth-child(4n+4)) {
+        margin-right: 0;
+      }
+    .dict_contents:not(:nth-child(3n+3)) {
+        margin-right: 0;
+      }
+
+      .dict_contents:nth-child(n+5) {
+        margin-top: 0;
+      }
+      
+      .dict_contents:nth-child(n+4) {
+        margin-top: 20px;
+      }
+
+}
+.dict_cont_a{
+    cursor:pointer;
+   
+
+}
+.dict_cont:hover{
+    opacity: 0.8;
+    
+}
+.dict_cont a{
+    color:#231815;
+}
+.dict_cont .dict_img{
+    width:100%;
+    
+}
+.dict_cont .dict_img img{
+    width:70%;
+    height:auto; 
+    margin:0 auto;
+}
+
+/************モーダル************/
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 10;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.5);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+/*モーダル中身*/
+.modal__content{
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    padding: 40px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+
+.modal-content_inner{
+    border-bottom:1px solid #666;
+}
+.modal-content_title{
+    width:60%;
+    margin:1rem auto;
+}
+.modal-content_title h3{
+    margin:0!important;
+}
+.modal-content_title p{
+    margin:0!important;
+}
+
+.dict_img{
+    width: 40%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.dict_img img{
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.modal-content_bottom{
+    width:100%;
+}
+.modal-bottom_inner{
+    width:90%;
+    margin:1rem auto;
+
+}
+.dict_detail p{
+    margin: 0!important;
+}
+
+
+.js-modal-close {
+    text-align: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/*モーダル枠の指定*/
+.modal-body{
+	position: absolute;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 500px;
+	max-height: 95vh;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    overflow: scroll;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+}
+
+/*モーダル内のコンテンツの指定*/
+.modal-content{
+	background: #fff;
+	text-align: left;
+	padding: 10px 30px;
+
+}
+
+/* モーダルウィンドウ表示中に記事本体を固定 */
+body.fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+
+/********************************/
+
+@media screen and (max-width:800px ) {
+    .modal-content_title {
+        width: 80%;
+        margin: 1rem auto;
+    }
+    .modal-body {
+        max-height: 80vh;
+        width: 90%;
+    }
+    .modal-content {
+        background: #fff;
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .modal-bottom_inner {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+}
+  {% endstyle %}
+
+  
+

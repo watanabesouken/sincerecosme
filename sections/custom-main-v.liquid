@@ -1,0 +1,81 @@
+{%comment%}main_v{%endcomment%}
+
+<section class="main_v_wrap">
+    <div class="main_v">
+        
+            <div class="main_v_img">
+                <a href="{{section.settings.main_v_url }}">
+                    <img src="{{section.settings.main_v_img | img_url: '2000x' }}">
+                </a>
+            </div>
+       
+
+        <div class="main_v_img_sp">
+            <a href="{{section.settings.main_v_url }}">
+             <img src="{{section.settings.main_v_img_sp | img_url: '1000x' }}">
+            </a>
+        </div>
+    </div>
+</section>
+
+
+{% style %}
+.main_v_wrap{
+    width:100%;
+}
+.main_v{
+    width:100%;
+}
+.main_v_img{
+    width:100%;
+}
+.main_v_img img{
+    width:100%;
+}
+.main_v_img_sp{
+    display:none;
+}
+
+@media screen and (max-width: 600px){
+    .main_v_img_sp{
+        display:block;
+    }
+    .main_v_img{
+        display:none;
+    }
+
+}
+{% endstyle %}
+
+  
+{% schema %}
+{
+"name":"main_v",
+"settings":[
+    {
+        "type":"image_picker",
+        "id":"main_v_img",
+        "label":"画像"
+    },
+    {
+        "type":"image_picker",
+        "id":"main_v_img_sp",
+        "label":"SP画像"
+    },
+    {
+        "type":"url",
+        "id":"main_v_url",
+        "label":"リンク設定",
+        "default":"/"
+    }
+    ],
+    "presets":[
+    {
+    "name":"main_v",
+    "category":"カスタムパーツ"
+    }]
+}
+{% endschema %}
+  
+  
+ 

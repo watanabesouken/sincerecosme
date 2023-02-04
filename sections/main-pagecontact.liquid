@@ -1,0 +1,137 @@
+<div class="Container pagecontact_wrap">
+  <header class="PageHeader">
+    <div class="SectionHeader SectionHeader--center">
+      <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1>
+    </div>
+  </header>
+  <div class="contact_text">{{ section.settings.contact_text }}</div>
+
+  <div class="PageContent {% unless section.settings.show_large %}PageContent--narrow{% endunless %} Rte">
+    {{ page.content }}
+  </div>
+  <div class="contact_text2">{{ section.settings.contact_text2 }}</div>
+  <div class="contactbtn_wrap">
+    <a href="{{ section.settings.contactbutton_link }}" class="Button Button--primary button__custom contactbtn_wrap_1">{{ section.settings.contactbutton_label }}</a>
+    <a href="{{ section.settings.contactbutton_link2 }}" class="Button Button--primary button__custom">{{ section.settings.contactbutton_label2 }}</a>
+  </div>
+</div>
+
+
+{% style %}
+.pagecontact_wrap{
+  max-width:1300px;
+}
+.contact_text{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+
+}
+.contact_text2{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+
+}
+.pagecontact_a{
+  text-decoration: underline;
+  }
+
+.contactbtn_wrap{
+  width:80%;
+
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+  margin-bottom:40px;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+.contactbtn_wrap_1{
+  margin-right:30px;
+}
+.contactbtn_wrap .button__custom{
+  width:40%!important;
+  max-width:300px;
+
+
+}
+@media screen and (max-width: 800px){
+  .contact_text{
+    width:90%;
+  
+  }
+  .contact_text2{
+    width:90%;
+  
+  }
+  .contactbtn_wrap{
+    width:90%;
+  
+  }
+
+
+}
+
+@media screen and (max-width: 600px){
+
+  .contactbtn_wrap{
+    width:90%;
+    flex-direction:column;
+
+  
+  }
+  .contactbtn_wrap .button__custom{
+    width:100%!important;
+    max-width:350px;
+    margin-bottom:20px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+}
+
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "PageContact",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "contact_text",
+      "label": "お問い合わせ説明"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_text2",
+      "label": "お問い合わせ説明2"
+    },
+    {
+      "type": "text",
+      "id": "contactbutton_label",
+      "label": "個人問い合わせ",
+      "default": "個人のお客様"
+    },
+    {
+      "type": "url",
+      "id": "contactbutton_link",
+      "label": "個人問い合わせリンク"
+    },
+    {
+      "type": "text",
+      "id": "contactbutton_label2",
+      "label": "法人問い合わせ",
+      "default": "法人のお客様"
+    },
+    {
+      "type": "url",
+      "id": "contactbutton_link2",
+      "label": "法人問い合わせリンク"
+    }
+  ]
+}
+{% endschema %}

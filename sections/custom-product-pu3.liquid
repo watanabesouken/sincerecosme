@@ -1,0 +1,89 @@
+{%comment%}カスタムセクションPOINT3下部{%endcomment%}
+
+<section class="product_p3u_wrap">
+    <div class="product_p3u_inner">
+            <div class="p3u_contents">
+                <div  class="p3u_title">
+                 <p>{{section.settings.pu_title}}</p>
+               </div>
+                <div class="product_p3u_p">
+                 <p>{{section.settings.pu_text}}</p>
+                </div>
+            </div>
+    </div>
+</section>
+
+  
+  {% schema %}
+  {
+  "name":"カスタム商品POINT3下部",
+    "settings":[
+        {
+            "type":"text",
+            "id":"pu_title",
+            "label":"タイトル"
+        },
+        {
+            "type":"textarea",
+            "id":"pu_text",
+            "label":"説明"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品POINT3下部",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+
+.product_p3u_wrap{
+    padding-bottom:60px;
+    width:100%;
+  }
+
+.product_p3u_wrap p{
+    color:#231815;
+    line-height: 1.6;
+    font-size:inherit;
+}
+.product_p3u_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    padding-top:3%;
+    padding-bottom:3%;
+    border:1px solid #666666;
+  }
+
+.p3u_contents{
+    width:80%;
+    text-align: left;
+    margin-left:auto;
+    margin-right:auto;
+}
+.product_p3u_p{
+    margin-top:10px;
+}
+
+
+
+@media screen and (max-width: 800px){
+
+  }
+
+
+  @media screen and (max-width: 600px){
+    .product_p3u_inner{
+      width:95%;
+    }
+    .p3u_contents{
+      width:90%;
+  }
+
+  }
+  
+  {% endstyle %}

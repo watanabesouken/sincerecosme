@@ -1,0 +1,106 @@
+{%comment%}カスタムセクション{%endcomment%}
+
+<section class="binkan_section">
+    <div class="binkan_wrap">
+        <div class="binkan_inner">
+            <p>{{section.settings.target_skin}}</p>
+        </div>
+        {% if section.settings.target_skin2 != blank %}
+        <div class="binkan_inner">
+            <p>{{section.settings.target_skin2}}</p>
+        </div>
+        {% endif %}
+        {% if section.settings.target_skin3 != blank %}
+        <div class="binkan_inner">
+            <p>{{section.settings.target_skin3}}</p>
+        </div>
+        {% endif %}
+        {% if section.settings.target_skin4 != blank %}
+        <div class="binkan_inner">
+            <p>{{section.settings.target_skin4}}</p>
+        </div>
+        {% endif %}
+        {% if section.settings.target_skin5 != blank %}
+        <div class="binkan_inner">
+            <p>{{section.settings.target_skin5}}</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+
+
+{% schema %}
+  {
+  "name":"対象肌記載",
+  "settings":[
+        {
+            "type":"text",
+            "id":"target_skin",
+            "label":"対象肌1",
+            "default": "キメ、ツヤ、透明感"
+        },
+        {
+            "type":"text",
+            "id":"target_skin2",
+            "label":"対象肌2"
+        },
+        {
+            "type":"text",
+            "id":"target_skin3",
+            "label":"対象肌3"
+        },
+        {
+            "type":"text",
+            "id":"target_skin4",
+            "label":"対象肌4"
+        },
+        {
+            "type":"text",
+            "id":"target_skin5",
+            "label":"対象肌5"
+        }
+        ],
+      "presets":[
+      {
+        "name":"対象肌記載",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+
+  
+  {% style %}
+  .binkan_section{
+    width:100%;
+    margin: 20px auto;
+    max-width: 1330px;
+    }
+    .binkan_wrap{
+        width:90%;
+        margin-left:50px;
+        margin-right:50px;
+    }
+    .binkan_inner{
+        padding:5px 10px;
+        display: inline-block;
+        margin-right:10px;
+        margin-bottom:5px;
+        border:1px solid #231815;
+    }
+    .binkan_inner p{
+        margin:0;
+        color:#231815;
+        font-size: 14px;
+    }
+  /* sp */
+  @media only screen and (max-width: 600px) {
+    .binkan_wrap{
+        width:90%;
+        margin-left:5%;
+        margin-right:5%;
+    }
+    
+  }
+  {% endstyle %}

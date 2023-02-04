@@ -1,0 +1,62 @@
+<!--スペース-->
+<div class="section-spacer-width section-spacer-{{section.id}}"></div>
+
+
+
+{% schema %}
+{
+"name":"スペーサー",
+"settings":[
+    {
+      "type":"header",
+      "content":"スペーサー",
+      "info":"セクションは25個までしか使えないので多用は注意です"
+    },
+    {
+    "type":"range",
+    "id":"pc_space",
+    "min":0,
+    "max":100,
+    "step":1,
+    "default":30,
+    "label":"PCスペース"
+    },
+    {
+    "type":"range",
+    "id":"mobile_space",
+    "min":0,
+    "max":100,
+    "step":1,
+    "default":30,
+    "label":"SPスペース"
+    }
+    ],
+"presets":[
+{
+"name":"スペーサー",
+"category":"カスタムパーツ"
+}]
+}
+{% endschema %}
+
+
+{% style %}
+   /******スペース******/
+.section-spacer-width{
+  display:block !important;
+  width:100%;
+  
+}
+.section-spacer-{{section.id}}{
+  height:{{section.settings.pc_space}}px !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .custom_space{
+    height:{{section.settings.mobile_space}}px !important;
+  }
+ 
+
+}
+
+{% endstyle %}

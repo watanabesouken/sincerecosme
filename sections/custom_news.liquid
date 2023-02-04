@@ -1,0 +1,160 @@
+{%comment%}画像なしnewsセクション{%endcomment%}
+{% assign blog=blogs[section.settings.blog] %}
+<section class="news-re_wrap">
+  <div class="news-re_inner">
+      <div class="news-re_contents">
+          <header class="SectionHeader">
+            <h2 class="SectionHeader__Heading Heading u-h1">
+              {{section.settings.title}}
+            </h2>
+          </header>
+          <div class="news-re_con">
+                {% for article in blog.articles limit:3 %}
+                <div class="news-re_content">
+                  <a href={{article.url}} class="blog_content">
+                    <span>{{ article.created_at | date: "%Y.%-m.%d" }}</span>
+                    <h2>{{article.title}}</h2>
+                  </a>
+                </div>
+                
+                {% endfor %} 
+                
+          </div>
+          <div class="SectionFooter">
+            <a href="/blogs/news" class="Button Button--primary button__custom">{{section.settings.news_btn}}</a>
+        </div> 
+          
+      </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name":"カスタムnews画像なし",
+"settings":[
+    {
+      "type":"text",
+      "id":"title",
+      "label":"タイトル"
+    },
+    {
+      "type":"text",
+      "id":"news_btn",
+      "label":"ボタンテキスト"
+    },
+    {
+    "type":"blog",
+    "id":"blog",
+    "label":"ブログ記事を選択"
+    }
+    ],
+    "presets":[
+    {
+      "name":"カスタムnews画像なし",
+      "category":"カスタムパーツ"
+    }]
+  }
+{% endschema %}
+
+
+{% style %}
+/*news_re*/
+
+.news-re_wrap .SectionHeader {
+    text-align: center;
+}
+.news-re_wrap{
+  padding-top:60px;
+  padding-bottom:60px;
+  width:100%;
+}
+.news-re_inner{
+  width:70%;
+  max-width: 1260px;
+  margin-right:auto;
+  margin-left:auto;
+}
+.news-re_contents{
+  width:100%;
+}
+.news-re_title{
+  width:40%;
+  
+}
+.news-re__button__wrap{
+  display:inline-block;
+  border-radius: 30px;
+  padding:5px 30px;
+  border:solid 1px rgb(0, 0, 0);
+  text-decoration: none;
+  color:#000;
+  background-color: #fff;
+  position:absolute;
+  bottom:30%;
+  left:0%;
+}
+
+.news-re_contents h2{
+  margin-bottom:0;
+}
+.news-re_contents span{
+  font-size:12px;
+  margin-right: 5rem;
+}
+.news-re_con{
+  width:100%;
+  border-top:solid #666 1px;
+}
+.news-re_content{
+  width:100%;
+  border-bottom:solid 1px #666;
+  padding: 1.5rem 5rem;
+}
+.news-re_content h2{
+  display:inline-block;
+
+}
+.news-re_content a{
+  text-decoration: none;
+  color:#000;
+}
+@media screen and (max-width: 1000px){
+    .news-re_content{
+        padding: 1rem;
+      }
+      .news-re_contents span{
+        margin-right: 3rem;
+      }
+}
+
+@media screen and (max-width: 700px){
+  .news-re_inner {
+    width: 90%;
+}
+  .blog_content{
+    display:flex;
+    flex-direction:column;
+  }
+  .news-re_content h4{
+    margin-top:0.5rem;
+  
+  }
+  .news-re_con {
+    width: 100%;
+    border-top: solid #666 1px;
+  }
+  .news-re_title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+  .news-re__button__wrap{
+    bottom:-30%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+{% endstyle %}

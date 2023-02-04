@@ -1,0 +1,112 @@
+{%comment%}オリジナルセクション{%endcomment%}
+<section class="howto_wrap">
+  <div class="howto_inner">
+          <header class="SectionHeader">
+            <h2 class="SectionHeader__Heading Heading u-h1">
+              {{section.settings.howto_title}}
+            </h2>
+          </header>
+          <div class="howto_con">
+                {% for block in section.blocks %} 
+                <div class="howto_content">
+                  <div class="howto_content_img">
+                      <img src="{{block.settings.howto_img | img_url: '500x' }}" >
+                  </div>
+                  <p>{{block.settings.howto_text}}</p>
+                </div>
+                
+                {% endfor %} 
+          </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+  "name":"カスタムhowtouse",
+    "settings":[
+        {
+            "type":"text",
+            "id":"howto_title",
+            "label":"タイトル"
+        }
+        ],
+        "blocks":[
+        {
+          "type":"text",
+          "name":"howtouse",
+          "settings":[
+            {
+                "type":"image_picker",
+                "id":"howto_img",
+                "label":"画像"
+            },
+            {
+                "type":"textarea",
+                "id":"howto_text",
+                "label":"テキスト"
+            }
+            ]
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタムhowtouse",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+
+
+{% style %}
+/*howtouse*/
+.howto_wrap{
+    padding-top:60px;
+    padding-bottom:60px;
+    width:100%;
+  }
+.howto_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    text-align: center;
+
+  }
+.howto_con{
+    width:100%;
+    display:flex;
+    justify-content: center;
+
+}
+.howto_content{
+    width:30%;
+    margin:0 40px ;
+    text-align: center;
+}
+.howto_content_img{
+    width:100%;
+    margin-bottom:20px;
+    
+
+}
+.howto_content_img img{
+    width:100%;
+    
+}
+@media screen and (max-width: 600px){
+    .howto_inner{
+        width:90%;
+    
+      }
+      .howto_con{
+        flex-direction:column;
+    
+    }
+    .howto_content{
+        width:100%;
+        margin:0;
+        margin-bottom:40px;
+    }
+  }
+
+{% endstyle %}

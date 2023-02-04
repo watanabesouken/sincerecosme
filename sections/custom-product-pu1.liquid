@@ -1,0 +1,139 @@
+{%comment%}カスタムセクションPOINT1下部{%endcomment%}
+
+<section class="product_pu_wrap">
+    <div class="product_pu_inner">
+        <div class="product_pu_img">
+            <img src="{{section.settings.pu_img | img_url: '1000x' }}">
+        </div>
+        <div class="product_pu_contents">
+            <div class="pu_contents">
+                <div  class="pu_title">
+                 <p>{{section.settings.pu_title}}</p>
+               </div>
+                <div class="product_pu_p">
+                 <p>{{section.settings.pu_text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  {% schema %}
+  {
+  "name":"カスタム商品POINT1下部",
+    "settings":[
+        {
+            "type":"text",
+            "id":"pu_title",
+            "label":"タイトル"
+        }
+        ,
+        {
+            "type":"image_picker",
+            "id":"pu_img",
+            "label":"画像"
+        },
+        {
+            "type":"textarea",
+            "id":"pu_text",
+            "label":"説明"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品POINT1下部",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+
+.product_pu_wrap{
+    width:100%;
+  }
+
+.product_pu_wrap p{
+    color:#231815;
+    line-height: 1.6;
+    font-size:inherit;
+}
+.product_pu_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    background-color:#f5f4f5;
+    display: flex;
+    justify-content: flex-start;
+  }
+.product_pu_img{
+    width:40%;
+    padding:3%;
+}
+.product_pu_img img{
+    width:100%;
+}
+
+.product_pu_contents{
+    width:60%;
+    text-align: left;
+    display:flex;
+    flex-direction: column;
+    padding-top:3%;
+    padding-bottom:3%;
+    padding-right:3%;
+}
+.pu_title{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:5px;
+    padding-right:5px;
+    border-bottom:1px solid #666666;
+}
+.product_pu_p{
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+
+
+@media screen and (max-width: 800px){
+
+    .product_pu_inner{
+        width:90%;
+        align-items:center;
+
+
+      }
+    
+
+  }
+
+
+  @media screen and (max-width: 600px){
+    .product_pu_inner{
+        width:100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction:column;
+
+      }
+      .product_pu_img{
+        width:100%;
+        padding:0;
+    }
+    
+    .product_pu_contents{
+        width:100%;
+        padding-left: 3%;
+
+    }
+
+
+  }
+  
+  {% endstyle %}

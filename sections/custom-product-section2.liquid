@@ -1,0 +1,110 @@
+{%comment%}カスタムセクション{%endcomment%}
+
+<section id="pr_point_se" class="product_pointsecond_wrap">
+    <div class="product_pointsecond_inner">
+        <div class="product_point_img">
+            <img src="{{section.settings.point2_img | img_url: '1000x' }}">
+        </div>
+        <div class="product_pointsecond_contents">
+            <div class="pointsecond_contents_in">
+                <span class="point">POINT{{section.settings.point2_number}}</span>
+                <h2>{{section.settings.point2_title}}</h2>
+                <div class="product_pointone_p">
+                <p>{{section.settings.point2_text}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  {% schema %}
+  {
+  "name":"カスタム商品POINT2",
+    "settings":[
+        {
+            "type":"text",
+            "id":"point2_number",
+            "label":"point番号"
+        },
+        {
+            "type":"text",
+            "id":"point2_title",
+            "label":"タイトル"
+        }
+        ,
+        {
+            "type":"image_picker",
+            "id":"point2_img",
+            "label":"画像"
+        },
+        {
+            "type":"textarea",
+            "id":"point2_text",
+            "label":"point説明"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品POINT2",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+ 
+ /************ポイントセクション２*/  
+.product_pointsecond_wrap{
+    padding-top:60px;
+    padding-bottom:40px;
+    width:100%;
+  }
+.product_pointsecond_wrap h2{
+    color:#231815;
+    font-size: 1.7rem;
+    font-weight:bold;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+.product_pointsecond_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+.product_pointsecond_contents{
+    width:45%;
+    margin: 10px 0 0 ;
+    text-align: left;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 800px){
+    .product_pointsecond_wrap h2{
+        font-size: 1.3rem;
+    }
+    .product_pointsecond_inner{
+        width:60%;
+        flex-direction: column-reverse;
+    }
+    .product_pointsecond_contents{
+        width:100%;
+        margin-bottom:40px;
+    }
+  }
+
+  @media screen and (max-width: 600px){
+
+    .product_pointsecond_inner{
+        width:90%;
+   
+    }
+
+  }
+  
+  {% endstyle %}

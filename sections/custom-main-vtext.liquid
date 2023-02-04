@@ -1,0 +1,103 @@
+{%comment%}main_v{%endcomment%}
+
+<section class="main_text_wrap">
+    <div class="main_text">
+        <div class="main_text_img">
+            <img src="{{section.settings.main_text_img | img_url: '2000x' }}">
+            <h3>{{section.settings.main_text }}</h3>
+        </div>
+        <div class="main_text_img_sp">
+            <img src="{{section.settings.main_text_img_sp | img_url: '1000x' }}">
+            <h3>{{section.settings.main_text }}</h3>
+        </div>
+    </div>
+</section>
+
+
+{% style %}
+.main_text_wrap{
+    width:100%;
+}
+.main_text{
+    width:100%;
+}
+.main_text_img{
+    width:100%;
+    position: relative;
+}
+.main_text_img h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.main_text_img img{
+    width:100%;
+}
+.main_text_img_sp{
+    display:none;
+    width:100%;
+    position: relative;
+}
+.main_text_img_sp img{
+    width:100%;
+}
+.main_text_img_sp h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px){
+    .main_text_img_sp{
+        display:block;
+    }
+    .main_text_img{
+        display:none;
+    }
+
+}
+{% endstyle %}
+
+  
+{% schema %}
+{
+"name":"main_text",
+"settings":[
+    {
+        "type":"image_picker",
+        "id":"main_text_img",
+        "label":"画像"
+    },
+    {
+        "type":"image_picker",
+        "id":"main_text_img_sp",
+        "label":"SP画像"
+    },
+    {
+        "type":"text",
+        "id":"main_text",
+        "label":"テキスト"
+    }
+
+    ],
+    "presets":[
+    {
+    "name":"main_text",
+    "category":"カスタムパーツ"
+    }]
+}
+{% endschema %}
+  
+  
+ 

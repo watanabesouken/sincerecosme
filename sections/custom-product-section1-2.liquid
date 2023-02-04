@@ -1,0 +1,315 @@
+{%comment%}カスタムセクションマスクポイント１{%endcomment%}
+
+<section class="product_point_wrap">
+    <div class="product_point1-2_inner">
+        <div class="product_pointone_contents1-2">
+            <div class="pointone_contents1-2">
+                <span class="point">POINT.{{section.settings.point_number1_2}}</span>
+                <h2>{{section.settings.point_title1_2}}</h2>
+                <div class="product_pointone_p">
+                <p>{{section.settings.point_text1_2}}</p>
+                </div>
+                <div class="product_pointone_subp">
+                <p>{{section.settings.point_text21_2}}</p>
+                </div>
+                
+            </div>
+            <div class="SectionFooter">
+                <a href="{{section.settings.point_url1_2}}" class="Button Button--primary">{{section.settings.point_btn1_2}}</a>
+            </div> 
+            
+        </div>
+        <div class="product_point_imgwrap">
+            <div class="product_point_img1-2">
+                <img src="{{section.settings.point_img1_2 | img_url: '1000x' }}">
+            </div>
+            <div class="product_point_img1-2sp">
+                <img src="{{section.settings.point_img1_2sp | img_url: '1000x' }}">
+            </div>
+            <div class="product_point_imgu_wrap">
+                <div class="product_point_imgu">
+                    <div class="product_point_imgu_in">
+                        <p>ナイアシンアミド</p>
+                    </div>
+                    <p class="product_point_imgu_smallp">※2*1</p>
+                </div>
+                <div class="product_point_imgu">
+                    <div  class="product_point_imgu_in">
+                        <p>ビタミンC誘導体</p>
+                    </div>
+                    <p  class="product_point_imgu_smallp">アスコルビルリン酸Ｎａ※2*1</p>
+                </div>
+                <div class="product_point_imgu">
+                    <div  class="product_point_imgu_in">
+                        <p>アデノシン</p>
+                    </div>
+                    <p  class="product_point_imgu_smallp">※2*2</p>
+                </div>
+                <div class="product_point_imgu">
+                    <div  class="product_point_imgu_in">
+                        <p>天然保湿因子<br>（NMF）</p>
+                    </div>
+                    <p  class="product_point_imgu_smallp">ＰＣＡ-Na※1*1</p>
+                </div>
+                <div class="product_point_imgu">
+                    <div  class="product_point_imgu_in">
+                        <p>アミノ酸由来成分</p>
+                    </div>
+                    <p  class="product_point_imgu_smallp">アルギニン※1*1、グルタチオン※1*1、ベタイン※1</p>
+                </div>
+            </div>
+            <div class="product_point_imgu_d">
+                <p>{{section.settings.point_imgu}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+  {% schema %}
+  {
+  "name":"カスタム商品POINT1_2",
+    "settings":[
+        {
+            "type":"text",
+            "id":"point_number1_2",
+            "label":"point番号"
+        },
+        {
+            "type":"text",
+            "id":"point_title1_2",
+            "label":"タイトル"
+        }
+        ,
+        {
+            "type":"image_picker",
+            "id":"point_img1_2",
+            "label":"画像"
+        },
+        {
+            "type":"image_picker",
+            "id":"point_img1_2sp",
+            "label":"sp画像"
+        },
+        {
+            "type":"textarea",
+            "id":"point_text1_2",
+            "label":"point説明"
+        }
+        ,
+        {
+            "type":"textarea",
+            "id":"point_text21_2",
+            "label":"point備考欄"
+        },
+        {
+            "type":"text",
+            "id":"point_btn1_2",
+            "label":"ボタンテキスト"
+        },
+        {
+            "type":"url",
+            "id":"point_url1_2",
+            "label":"ボタンリンク"
+        },
+        {
+            "type":"text",
+            "id":"point_imgu",
+            "label":"※テキスト",
+            "default":"※1保湿成分　※2整肌成分　※3 年齢に応じたケア　*1 Cer ルミナスマスクSのみ配合　*2 Cer ルミナスクリームSのみ配合"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品POINT1_2",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+  /************ポイント共通************/
+.product_point_wrap{
+    padding-top:60px;
+    width:100%;
+  }
+.product_point_wrap h2{
+    color:#231815;
+    font-size: 1.7rem;
+    font-weight:bold;
+    margin-top:2rem;
+    margin-bottom:1rem;
+}
+.product_point_wrap p{
+    color:#231815;
+    line-height: 1.6;
+    font-size:inherit;
+}
+.product_point1-2_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+  }
+.product_point_imgwrap{
+
+    margin-top:60px;
+}
+.product_point_img1-2{
+    width:100%;
+    margin-top:40px;
+    margin-bottom:40px;
+    
+
+}
+.product_point_img1-2 img{
+    width:100%;
+}
+.point{
+    font-size:1.5rem;
+    color:#231815;
+    padding-bottom:5px;
+    border-bottom:1px solid #231815;
+    letter-spacing: 3px;
+    font-weight:bold;
+}
+.product_point_btn{
+    padding:5px;
+    width:80%;
+    background-color:#9db3c3;
+    color:#fff;
+    text-align:center;
+}
+
+/************ポイントセクション１************/
+
+
+.product_pointone_contents1-2{
+    text-align: center;
+    letter-spacing: 1px;
+}
+.pointone_contents1-2{
+    margin-bottom:32px;
+}
+
+.product_pointone_subp p{
+    color:rgb(148, 148, 148);
+    font-size:0.8rem;
+    margin-top:16px;
+    margin-bottom:16px;
+}
+
+.product_pointone_contents1-2 .SectionFooter {
+    text-align: left;
+    margin-top:0;
+    text-align:center;
+}
+.product_pointone_contents1-2 .SectionFooter .Button--primary {
+    width: 40%;
+    padding: 10px;
+}
+.product_point_imgu_wrap{
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.product_point_imgu{
+    width:18%;
+    text-align: center;
+    padding: 5px !important;
+}
+.product_point_imgu_in{
+  background-color:#f5f4f5;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.product_point_imgu_in p{
+  font-size:18px !important;
+  line-height: 1.2 !important;
+
+}
+.product_point_imgu_smallp{
+    font-size:12px !important;
+    text-align:left;
+}
+.product_point_imgu_d{
+    text-align:left;
+    margin-top: 10px;
+}
+.product_point_imgu_d p{
+    font-size:12px !important;
+}
+.product_point_img1-2sp{
+    display:none;
+}
+.pc_kaigyo{
+    display:block;
+}
+.sp_kaigyo{
+    display:none;
+}
+@media screen and (max-width: 800px){
+    .product_point1-2_wrap h2{
+        font-size: 1.5rem;
+    }
+    .product_point1-2_inner{
+        width:80%;
+        flex-direction:column-reverse;
+        justify-content: space-around;
+      }
+      .product_pointone_contents1-2{
+        width:100%;
+        margin-bottom:40px;
+        
+    }
+    .product_point_imgu{
+        width:31%;
+    }
+    .pc_kaigyo{
+        display:none;
+    }
+  }
+
+
+  @media screen and (max-width: 600px){
+    .product_point1-2_inner{
+        width:90%;
+      }
+
+    .product_pointone_contents1-2{
+        text-align:left;
+    }
+
+    .product_pointone_contents1-2 .SectionFooter .Button--primary {
+        width: 80%;
+    }
+    .product_point_imgu{
+        width:50%;
+    }
+    .product_point_imgu_wrap{
+        justify-content:flex-start;
+    }
+    .product_point_img1-2{
+        display:none;
+    }
+    .product_point_img1-2sp{
+        display:block;
+        width:100%;
+        margin-top:40px;
+        margin-bottom:40px;
+    }
+    .product_point_img1-2sp img{
+        width:100%;
+    }
+    .sp_kaigyo{
+        display:block;
+    }
+    .product_point_imgu_smallp{
+        white-space: nowrap;
+    }
+  }
+  .sp_kaigyo
+  {% endstyle %}

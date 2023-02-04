@@ -1,0 +1,158 @@
+{%comment%}カスタムセクション{%endcomment%}
+<script>
+    $(function(){
+        $('.js-modal-open').each(function(){
+            $(this).on('click',function(){
+                var target = $(this).data('target');
+                var modal = document.getElementById(target);
+                $(modal).fadeIn();
+                return false;
+            });
+        });
+        $('.js-modal-close').on('click',function(){
+            $('.js-modal').fadeOut();
+            return false;
+        }); 
+    });
+
+    // .s_03 .accordion_one
+    $(function(){
+    //.accordion_oneの中の.accordion_headerがクリックされたら
+    $('.s_03 .accordion_one .accordion_header').click(function(){
+        //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+        $(this).next('.accordion_inner').slideToggle();
+        $(this).toggleClass("open");
+    });
+    });
+
+</script>
+<div class="section s_03">
+    <div class="accordion_one">
+      <div class="accordion_header dict_title stay">
+            <div class="i_box"><i class="one_i"></i></div>
+            <h1>{{section.settings.dict_title}}</h1>
+        </div>
+      <div class="accordion_inner stay">
+        <div class="dict_contents_wrap">
+            {% for block in section.blocks %} 
+            <div class="dict_contents">
+                <a class="js-modal-open dict_cont_a" data-target="{{block.settings.dict_material_name_en}}">
+                    <div class="dict_cont modal-open">
+                        <p>{{block.settings.dict_material_name_jp}}</p>
+                        <div class="dict_img"><img src="{{block.settings.dict_img | img_url: '500x'}}"></div>
+                        
+                    </div>
+                </a>
+                <!-- モーダル本体 -->
+                <div id="{{block.settings.dict_material_name_en}}" class="modal js-modal">
+                    <div class="modal__bg js-modal-close"></div>
+                    <div class="modal-body">
+                        <!-- 閉じるボタン -->
+                        
+                        <!-- モーダル内のコンテンツ -->
+                        <div class="modal-content">
+                            <div class="js-modal-close">×</div>
+                            <div class="modal-content_inner">
+                                <div class="dict_img"><img src="{{block.settings.dict_img | img_url: '500x'}}"></div>
+                                <div class="modal-content_title">
+                                    <p class="inci_name_jp">{{block.settings.dict_material_name_jp}}</p>
+                                    <p class="inci_name_en">{{block.settings.dict_material_name_en}}</p>
+                                </div>
+                            </div>
+                            <div class="modal-content_bottom" >
+                                <div class="modal-bottom_inner">
+                                    <div class="dict_detail">
+                                        {% if block.settings.detail_subject != blank %}
+                                        <p>科名：{{block.settings.detail_subject}}</p>
+                                        {%endif%}
+                                        {% if block.settings.dict_origin != blank %}
+                                        <p>産地：{{block.settings.dict_origin}}</p>
+                                        {%endif%}
+                                        {% if block.settings.dict_extract != blank %}
+                                        <p>抽出部位：{{block.settings.dict_extract}}</p>
+                                        {%endif%}
+                                    </div>
+                                    <p class="modal-bottom_inner_p">{{block.settings.detail_text}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} 
+            
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+
+
+  {% schema %}
+  {
+  "name":"Dictionary-accordion1",
+    "settings":[
+        {
+            "type":"text",
+            "id":"dict_title",
+            "label":"タイトル"
+        }
+        ],
+        "blocks":[
+        {
+          "type":"text",
+          "name":"原料紹介",
+          "settings":[
+            {
+                "type":"image_picker",
+                "id":"dict_img",
+                "label":"原料画像"
+            },
+            {
+                "type":"text",
+                "id":"dict_material_name_jp",
+                "label":"原料名（日本語）"
+            },
+            {
+                "type":"text",
+                "id":"dict_material_name_en",
+                "label":"原料名（英語）"
+            },
+            {
+                "type":"text",
+                "id":"detail_subject",
+                "label":"科目名"
+            },
+            {
+                "type":"text",
+                "id":"dict_origin",
+                "label":"産地"
+            },
+            {
+                "type":"text",
+                "id":"dict_extract",
+                "label":"抽出部位"
+            },
+            {
+                "type":"textarea",
+                "id":"detail_text",
+                "label":"詳細説明"
+            }
+            ]
+        }
+        ],
+      "presets":[
+      {
+        "name":"Dictionary-accordion1",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+ 
+
+  
+

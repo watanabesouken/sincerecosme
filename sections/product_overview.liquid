@@ -1,0 +1,130 @@
+{%comment%}カスタムセクション{%endcomment%}
+
+<section class="product_overview_wrap">
+    <div class="product_overview_in">
+        <header class="SectionHeader">
+            <h2 class="SectionHeader__Heading Heading u-h1">
+            {{section.settings.pd_title}}
+            </h2>
+        </header>
+        <table class="product_overview">
+            {% for block in section.blocks %} 
+            <tr>
+            <th>{{block.settings.pd_name}}</th>
+            <td>{{block.settings.pd_text}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+
+  
+  {% schema %}
+    {
+    "name":"カスタム商品概要",
+      "settings":[
+            {
+                "type":"text",
+                "id":"pd_title",
+                "label":"タイトル"
+            }
+          ],
+          "blocks":[
+          {
+            "type":"text",
+            "name":"pd",
+            "settings":[
+              {
+                  "type":"text",
+                  "id":"pd_name",
+                  "label":"商品概要名"
+              },
+              {
+                "type":"text",
+                "id":"pd_text",
+                "label":"テキスト"
+                }
+              ]
+          }
+          ],
+        "presets":[
+        {
+          "name":"カスタム商品概要",
+          "category":"カスタムパーツ"
+        }]
+      }
+    {% endschema %}
+  
+  
+  {% style %}
+  /*商品説明概要*/
+.product_overview_wrap{
+    padding-top:60px;
+    padding-bottom:60px;
+    width:100%;
+
+}
+.product_overview_in{
+    width: 60%;
+    margin-right:auto;
+    margin-left:auto;
+
+}
+.product_overview_in .SectionHeader{
+    text-align:center;
+
+}
+.product_overview {
+    width: 100%;
+}
+.product_overview {
+    border-spacing: 0px;
+}
+    
+    .product_overview th{
+    border: 1px solid rgb(240, 240, 240);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    width:20%;
+    }
+    .product_overview td {
+    border: 1px solid rgb(240, 240, 240);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    }
+    
+    .product_overview th {
+    background-color: #9db3c3; 
+    color:#fff;
+    font-weight: 400;
+    }
+    
+    @media screen and (max-width: 800px) {
+        .product_overview_in{
+            width: 80%;
+        
+        } 
+        .product_overview,
+        .product_overview tr,
+        .product_overview td,
+        .product_overview {display:block;}
+        .product_overview th {width:auto;}
+
+        .product_overview th{
+            display:block;
+            padding: 5px 10px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .product_overview_in{
+            width: 90%;
+            
+        
+        } 
+    }
+    
+  
+  
+  {% endstyle %}

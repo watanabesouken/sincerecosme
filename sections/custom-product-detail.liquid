@@ -1,0 +1,170 @@
+{%comment%}カスタムセクション{%endcomment%}
+<section class="product_detail_wrap">
+    <div class="product_detail_inner">
+        <div class="product_detail_contents">
+            
+            <h3 class="detail_title">{{section.settings.detail_title}}</h3>
+            <div class="detail_contents">
+                {% for block in section.blocks %} 
+                {% if block.settings.contents_name != blank %}
+                <p>{{block.settings.contents_name}}</p>
+                {%endif%}
+
+                {% endfor %}
+            </div>
+            
+        </div>
+        <div class="product_detail_contents">
+            <h3 class="detail_title">{{section.settings.detail_title2}}</h3>
+            <div class="detail_contents_2">
+                {% for block in section.blocks %} 
+
+                {% if block.settings.contents_name2 != blank %}
+                <p>{{block.settings.contents_name2}}</p>
+                {%endif%}
+
+                {% if block.settings.contents_p != blank %}
+                <span>{{block.settings.contents_p}}</span>
+                {%endif%}
+                {% endfor %}
+            </div>
+            <div class="detail_contents_pnote">
+                <p>{{section.settings.contents_p_note}}</p> 
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+  
+  {% schema %}
+  {
+  "name":"カスタム商品成分紹介",
+    "settings":[
+        {
+            "type":"text",
+            "id":"detail_title",
+            "label":"タイトル"
+        },
+        {
+            "type":"text",
+            "id":"detail_title2",
+            "label":"タイトル2"
+        },
+        {
+            "type":"textarea",
+            "id":"contents_p_note",
+            "label":"備考"
+        }
+        ],
+        "blocks":[
+        {
+          "type":"text",
+          "name":"コンテンツ1",
+          "settings":[
+            {
+                "type":"text",
+                "id":"contents_name",
+                "label":"成分名"
+            }
+            ]
+        },
+        {
+            "type":"tex",
+            "name":"コンテンツ2",
+            "settings":[
+              {
+                  "type":"text",
+                  "id":"contents_name2",
+                  "label":"成分名"
+              },
+              {
+                  "type":"text",
+                  "id":"contents_p",
+                  "label":"注意書き"
+              }
+              ]
+          }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品成分紹介",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+  .product_detail_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    display:flex;
+    justify-content: space-around;
+  }
+.product_detail_contents{
+    width:45%;
+    letter-spacing: 2px;
+
+}
+.detail_title{
+    font-size:1.5rem;
+    padding-bottom: 5px;
+    border-bottom:1px solid rgb(170, 145, 75);
+    color:rgb(170, 145, 75);
+    text-align: center;
+}
+.detail_contents{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 40px;
+}
+.detail_contents p{
+    
+    display:inline-block;
+    padding:5px 0;
+    border:1px dashed rgb(148, 148, 148);
+    width:45%;
+    margin:8px 0;
+}
+.detail_contents_2{
+    margin-top: 40px;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+.detail_contents_2 p{
+    padding:5px 10px;
+    border:1px dashed rgb(148, 148, 148);
+    margin:8px 0;
+}
+.detail_contents_2 span{
+    color:rgb(148, 148, 148);
+    font-size:0.8rem;
+    text-align: left;
+}
+.detail_contents_pnote{
+    margin-top:20px;
+}
+.detail_contents_pnote p{
+    color:rgb(148, 148, 148);
+    font-size:0.8rem;
+}
+
+
+  @media screen and (max-width: 600px){
+    .product_detail_inner{
+        width:90%;
+        flex-direction:column;
+      }
+    .product_detail_contents{
+        width:100%;
+        margin-bottom:40px;
+    
+    }
+  }
+  
+  {% endstyle %}

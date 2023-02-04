@@ -1,0 +1,215 @@
+{%comment%}オリジナルセクション{%endcomment%}
+<section class="howto2_wrap">
+  <div class="howto2_inner">
+          <header class="SectionHeader">
+            <h2 class="SectionHeader__Heading Heading u-h1">
+              {{section.settings.howto2_title}}
+            </h2>
+          </header>
+          <div class="howto2_con">
+              
+                <div class="howto2_content">
+                  <div class="howto2_content_text">
+                   <p>{{section.settings.howto2_explanation}}</p>
+                  </div>
+                  <div class="howto2_content_img">
+                      <div  class="howto2_img">
+                          <div  class="howto2_img_in">
+                          </div>
+                      </div>
+                      <span>▶︎</span>
+                      <div  class="howto2_img">
+                          <div  class="howto2_img_in2">
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                {%- if section.settings.howto2_explanation2 != blank -%}
+                <div class="howto2_content">
+                  <div class="howto2_content_text">
+                   <p>{{section.settings.howto2_explanation2}}</p>
+                  </div>
+                  <div class="howto2_content_img">
+                      <div  class="howto2_img">
+                          <div  class="howto2_img_in3">
+                          </div>
+                      </div>
+                      <span>▶︎</span>
+                      <div  class="howto2_img">
+                          <div  class="howto2_img_in4">
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                {%- endif -%}
+          </div>
+  </div>
+</section>
+
+{% style %}
+.howto2_wrap{
+  width:100%;
+  margin: 20px auto;
+  
+}
+.howto2_inner{
+  width:80%;
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center;
+  background-color: rgb(241, 241, 241);
+  padding-top:60px;
+  padding-bottom:60px;
+
+}
+.howto2_con{
+  width:100%;
+}
+.howto2_content{
+  width:80%;
+  margin:0 auto;
+  text-align: center;
+  
+}
+.howto2_content_text{
+  margin-bottom:20px;
+}
+.howto2_content_img{
+  width:100%;
+  margin-bottom:30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.howto2_img{
+  width:30%;
+}
+.howto2_img_in{
+  border-radius: 50%;
+  width : 100% ;
+  padding-top : 100% ;
+  background-image: url("{{ section.settings.howto2_img | img_url: '500x' }}");
+  background-size: cover;
+}
+.howto2_img_in2{
+  border-radius: 50%;
+  width : 100% ;
+  padding-top : 100% ;
+  background-image: url("{{section.settings.howto2_img2 | img_url: '500x' }}");
+  background-size: cover;
+}
+.howto2_img_in3{
+  border-radius: 50%;
+  width : 100% ;
+  padding-top : 100% ;
+  background-image: url("{{section.settings.howto2_img3 | img_url: '500x' }}");
+  background-size: cover;
+
+}
+.howto2_img_in4{
+  border-radius: 50%;
+  width : 100% ;
+  padding-top : 100% ;
+  background-image: url("{{section.settings.howto2_img4 | img_url: '500x' }}");
+  background-size: cover;
+
+}
+
+
+
+
+.howto2_content_img span{
+  margin:0 30px;
+  font-size: 3rem;
+  color:#777777;
+}
+
+.howto2_content_img img{
+  width:100%;
+  
+}
+@media screen and (max-width: 800px){
+  .howto2_inner{
+      width:100%;
+  
+    }
+  }
+@media screen and (max-width: 600px){
+
+
+  .howto2_content{
+      width:100%;
+      margin:0;
+      margin-bottom:0;
+  }
+  .howto2_img{
+    width:40%;
+  }
+  .howto2_content_img span{
+    margin:0 10px;
+    font-size: 2rem;
+    color:#777777;
+  }
+  .howto2_con {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.howto2_content_text{
+  text-align:left;
+}
+}
+
+
+{% endstyle %}
+
+
+{% schema %}
+  {
+  "name":"カスタムhowtouse2",
+    "settings":[
+        {
+            "type":"text",
+            "id":"howto2_title",
+            "label":"タイトル"
+        },
+        {
+            "type":"image_picker",
+            "id":"howto2_img",
+            "label":"画像左"
+        },
+        {
+            "type":"image_picker",
+            "id":"howto2_img2",
+            "label":"画像右"
+        },
+        {
+            "type":"textarea",
+            "id":"howto2_explanation",
+            "label":"説明"
+        },
+        {
+            "type":"textarea",
+            "id":"howto2_explanation2",
+            "label":"下段説明"
+        },
+        {
+            "type":"image_picker",
+            "id":"howto2_img3",
+            "label":"下段画像左"
+        },
+        {
+            "type":"image_picker",
+            "id":"howto2_img4",
+            "label":"下段画像右"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタムhowtouse2",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+
+

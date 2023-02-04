@@ -1,0 +1,203 @@
+{%comment%}カスタムセクション{%endcomment%}
+
+<section class="product_point_wrap">
+    <div class="product_point_inner">
+        <div class="product_point_img">
+            <img src="{{section.settings.point_img | img_url: '1000x' }}">
+        </div>
+        <div class="product_pointone_contents">
+            <div class="pointone_contents">
+                <span class="point">POINT.{{section.settings.point_number}}</span>
+                <h2>{{section.settings.point_title}}</h2>
+                <div class="product_pointone_p">
+                <p>{{section.settings.point_text}}</p>
+                </div>
+                <div class="product_pointone_subp">
+                <p>{{section.settings.point_text2}}</p>
+                </div>
+            </div>
+            <div class="SectionFooter">
+                <a href="{{section.settings.point_url}}" class="Button Button--primary">{{section.settings.point_btn}}</a>
+            </div> 
+        </div>
+    </div>
+</section>
+
+  
+  {% schema %}
+  {
+  "name":"カスタム商品POINT1",
+    "settings":[
+        {
+            "type":"text",
+            "id":"point_number",
+            "label":"point番号"
+        },
+        {
+            "type":"text",
+            "id":"point_title",
+            "label":"タイトル"
+        }
+        ,
+        {
+            "type":"image_picker",
+            "id":"point_img",
+            "label":"画像"
+        },
+        {
+            "type":"textarea",
+            "id":"point_text",
+            "label":"point説明"
+        }
+        ,
+        {
+            "type":"textarea",
+            "id":"point_text2",
+            "label":"point備考欄"
+        },
+        {
+            "type":"text",
+            "id":"point_btn",
+            "label":"ボタンテキスト"
+        },
+        {
+            "type":"url",
+            "id":"point_url",
+            "label":"ボタンリンク"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品POINT1",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+  /************ポイント共通************/
+.product_point_wrap{
+    padding-top:60px;
+    width:100%;
+  }
+.product_point_wrap h2{
+    color:#231815;
+    font-size: 1.7rem;
+    font-weight:bold;
+    margin-top:2rem;
+    margin-bottom:1rem;
+}
+.product_point_wrap p{
+    color:#231815;
+    line-height: 1.6;
+    font-size:inherit;
+}
+.product_point_inner{
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    display:flex;
+    justify-content: space-around;
+  }
+.product_point_img{
+    width:45%;
+}
+.product_point_img img{
+    width:100%;
+}
+.point{
+    font-size:1.5rem;
+    color:#231815;
+    padding-bottom:5px;
+    border-bottom:1px solid #231815;
+    letter-spacing: 3px;
+    font-weight:bold;
+}
+.product_point_btn{
+    padding:5px;
+    width:80%;
+    background-color:#9db3c3;
+    color:#fff;
+    text-align:center;
+}
+/*
+.point_btn{
+    position: relative;
+  } 
+  .point_btn::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.4em;
+    right:-35%;
+    content: '';
+    width: 50px;
+    height: 5px;
+    border-bottom: solid 1px;
+    border-right: solid 2px;
+    transform: skew(60deg);
+  }*/
+/************ポイントセクション１************/
+
+
+.product_pointone_contents{
+    width:45%;
+    text-align: left;
+    letter-spacing: 1px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.pointone_contents{
+    margin-bottom:32px;
+}
+
+.product_pointone_subp p{
+    color:rgb(148, 148, 148);
+    font-size:0.8rem;
+    margin-top:16px;
+    margin-bottom:16px;
+}
+
+.product_pointone_contents .SectionFooter {
+    text-align: left;
+    margin-top:0;
+}
+.product_pointone_contents .SectionFooter .Button--primary {
+    width: 80%;
+    padding: 10px;
+}
+@media screen and (max-width: 800px){
+    .product_point_wrap h2{
+        font-size: 1.5rem;
+    }
+    .product_point_inner{
+        width:60%;
+        flex-direction:column-reverse;
+        justify-content: space-around;
+      }
+      .product_point_img{
+        width:100%;
+    }
+      .product_pointone_contents{
+        width:100%;
+        margin-bottom:40px;
+        text-align:center;
+    }
+    .product_pointone_contents .SectionFooter {
+        text-align: center;
+    }
+  }
+
+
+  @media screen and (max-width: 600px){
+    .product_point_inner{
+        width:90%;
+      }
+    .product_pointone_contents{
+        text-align:left;
+    }
+
+  }
+  
+  {% endstyle %}

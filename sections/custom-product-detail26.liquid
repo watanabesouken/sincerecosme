@@ -1,0 +1,195 @@
+{%comment%}カスタムセクション{%endcomment%}
+<section class="p_detail_wrap">
+    <div class="p_detail_innner">
+        <h2 class="p_detail_tittle">{{section.settings.detail2_title}}</h2>
+        <div class="p_detailname26_wrap">
+            <div class="p_detailname_contents">
+                <p class="p_detailname">{{section.settings.detail2_text}}</p>
+            </div>
+            <div class="p_detailname_contents">
+                <p class="p_detailname">{{section.settings.detail2_text2}}</p>
+            </div>
+            <div class="p_detailname_contents">
+                <p class="p_detailname">{{section.settings.detail2_text3}}</p>
+            </div>
+            <div class="p_detailname_contents">
+                <p class="p_detailname">{{section.settings.detail2_text4}}</p>
+            </div>
+            <div class="p_detailname_contents">
+                <p class="p_detailname">{{section.settings.detail2_text5}}</p>
+            </div>
+            <div class="p_detailname_contents">
+                <p class="p_detailname">{{section.settings.detail2_text6}}</p>
+            </div>
+        </div>
+        <div class="p_detail_explanation">
+            <p>{{section.settings.detail2_explanation}}</p>
+            <p class="p_detail_explanation_s">{{section.settings.detail2_explanation2}}</p>
+        </div>
+    </div>
+</section>
+
+
+  {% schema %}
+  {
+  "name":"カスタム商品成分紹介26",
+    "settings":[
+        {
+            "type":"text",
+            "id":"detail2_title",
+            "label":"タイトル"
+        },
+        {
+            "type":"text",
+            "id":"detail2_text",
+            "label":"テキスト1"
+        },
+        {
+            "type":"text",
+            "id":"detail2_text2",
+            "label":"テキスト2"
+        },
+        {
+            "type":"text",
+            "id":"detail2_text3",
+            "label":"テキスト3"
+        },
+        {
+            "type":"text",
+            "id":"detail2_text4",
+            "label":"テキスト4"
+        },
+        {
+            "type":"text",
+            "id":"detail2_text5",
+            "label":"テキスト5"
+        },
+        {
+            "type":"text",
+            "id":"detail2_text6",
+            "label":"テキスト6"
+        },
+        {
+            "type":"textarea",
+            "id":"detail2_explanation",
+            "label":"説明"
+        },
+        {
+            "type":"textarea",
+            "id":"detail2_explanation2",
+            "label":"備考"
+        }
+        ],
+      "presets":[
+      {
+        "name":"カスタム商品成分紹介26",
+        "category":"カスタムパーツ"
+      }]
+    }
+  {% endschema %}
+  
+  
+  {% style %}
+ 
+.p_detail_wrap{
+    width:100%;
+    
+}
+.p_detail_innner{
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #231815;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.p_detail_tittle{
+    text-align: center;
+    font-size: 20px;
+    font-weight:bold;
+}
+.p_detailname26_wrap{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.p_detailname26_wrap .p_detailname_contents{
+    width: 13%;
+    padding: 10px 0;
+    text-align: center;
+    border:1px solid #231815;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 0.5%;
+}
+.p_detailname{
+    margin:0;
+}
+.p_detail_explanation{
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    margin-top:40px;
+}
+.p_detail_explanation_s{
+    font-size: 0.8rem;
+}
+@media only screen and (max-width: 1100px) {
+
+    .p_detailname {
+        font-size: 0.8rem;
+    }
+
+}
+@media only screen and (max-width: 900px) {
+    .p_detail_innner{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+        border:1px solid #231815;
+        padding-top:30px;
+        padding-bottom:30px;
+    }
+
+}
+  /* sp */
+  @media only screen and (max-width: 600px) {
+
+    
+    .p_detailname26_wrap{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .p_detailname26_wrap .p_detailname_contents{
+        width: 45%;
+        padding: 15px 0;
+        text-align: center;
+        margin-bottom: 15px;
+        border: 1px solid #231815;
+    }
+    .p_detailname {
+        font-size: 1rem;
+    }
+
+    .p_detail_explanation {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        margin-top: 20px;
+    }
+    .p_detail_innner{
+        width:90%;
+    }
+  }
+  
+  {% endstyle %}
